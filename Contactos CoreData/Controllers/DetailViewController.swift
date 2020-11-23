@@ -20,6 +20,7 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate, U
     var phone: Int64?
     var address: String?
     var index: Int?
+    var image: Data?
     
     @IBOutlet weak var contactImageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
@@ -41,8 +42,8 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate, U
         self.nameTextField.text = name
         self.phoneTextField.text = String(phone ?? 0)
         self.addressTextView.text = address
+        self.contactImageView.image = UIImage(data: image!)
     }
-    
     
     @IBAction func changeImageContac(_ sender: UIButton) {
         
@@ -60,20 +61,33 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         contactImageView.image = imagen
         
+        image = imagen?.jpegData(compressionQuality: 0.5)
+        
         picker.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func saveChangesContactButton(_ sender: UIBarButtonItem) {
         
-        // Sobre escribimos los nuevos datos en el contacto actual
-        contacts[index!].setValue(nameTextField.text, forKey: "name")
-        contacts[index!].setValue(Int64(phoneTextField.text!), forKey: "phone")
-        contacts[index!].setValue(addressTextView.text, forKey: "address")
-//        contacts[index!].setValue(contactImageView, forKey: "image")
+        // Creaccion del Alert
+        let alert = UIAlertController(title: "Guardar Contacto", message: "Se actualizara la informacion del contacto \(self.name!)", preferredStyle: .alert)
         
-        saveContact()
+        alert.addAction(UIAlertAction(title: "Guardar", style: .default, handler: { _ in action: do {
+            // Sobre escribimos los nuevos datos en el contacto actual
+            self.contacts[self.index!].setValue(self.nameTextField.text, forKey: "name")
+            self.contacts[self.index!].setValue(Int64(self.phoneTextField.text!), forKey: "phone")
+            self.contacts[self.index!].setValue(self.addressTextView.text, forKey: "address")
+            self.contacts[self.index!].setValue(self.image, forKey: "image")
+            
+            self.saveContact()
+            
+            self.navigationController?.popViewController(animated: true)
+            }
+        }))
         
-        navigationController?.popViewController(animated: true)
+        // Creacion del Alert Aceptar y Cancelar
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
+
+        self.present(alert, animated: true)
     }
     
     @IBAction func cancelChangesContactButton(_ sender: UIButton) {

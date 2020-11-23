@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="DetailTableViewCell" customModule="Contactos_CoreData">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Esn-sb-Epr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="jNe-wz-PGU">
+                                <rect key="frame" x="0.0" y="0.0" width="260" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZH2-Zf-qKD">
+                                        <rect key="frame" x="0.0" y="0.0" width="260" height="20.5"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detalles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWh-94-nhQ">
+                                        <rect key="frame" x="0.0" y="27" width="260" height="17"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="SWh-94-nhQ" secondAttribute="trailing" id="06g-kU-iVW"/>
+                                    <constraint firstItem="ZH2-Zf-qKD" firstAttribute="top" secondItem="jNe-wz-PGU" secondAttribute="top" id="AnA-PX-Xzl"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZH2-Zf-qKD" secondAttribute="trailing" id="gvO-sT-One"/>
+                                    <constraint firstItem="SWh-94-nhQ" firstAttribute="top" secondItem="ZH2-Zf-qKD" secondAttribute="bottom" id="lDU-rq-njV"/>
+                                    <constraint firstItem="ZH2-Zf-qKD" firstAttribute="leading" secondItem="jNe-wz-PGU" secondAttribute="leading" id="ruk-d3-FbX"/>
+                                    <constraint firstItem="SWh-94-nhQ" firstAttribute="leading" secondItem="jNe-wz-PGU" secondAttribute="leading" id="sue-pe-7NF"/>
+                                </constraints>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill.viewfinder" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="SzE-fH-5by">
+                                <rect key="frame" x="260" y="0.5" width="60" height="42.5"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="cLg-4A-g2s"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Esn-sb-Epr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Kpz-h5-Tqb"/>
+                    <constraint firstAttribute="bottom" secondItem="Esn-sb-Epr" secondAttribute="bottom" id="ZDN-52-xeu"/>
+                    <constraint firstAttribute="trailing" secondItem="Esn-sb-Epr" secondAttribute="trailing" id="Ztd-se-3LV"/>
+                    <constraint firstItem="Esn-sb-Epr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="w5K-bc-lEK"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" systemColor="systemTealColor"/>
+            <accessibility key="accessibilityConfiguration" identifier="Cell"/>
+            <connections>
+                <outlet property="detailCellLabel" destination="SWh-94-nhQ" id="8dg-Bi-hs9"/>
+                <outlet property="nameCellLabel" destination="ZH2-Zf-qKD" id="Lu8-dh-1tO"/>
+            </connections>
+            <point key="canvasLocation" x="35" y="71"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="person.fill.viewfinder" catalog="system" width="128" height="115"/>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
